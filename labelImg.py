@@ -989,6 +989,7 @@ class MainWindow(QMainWindow, WindowMixin):
 
     def loadFile(self, filePath=None):
         """Load the specified file, or the last opened file if None."""
+        prevname = self.filePath
         self.resetState()
         self.canvas.setEnabled(False)
         if filePath is None:
@@ -1067,6 +1068,16 @@ class MainWindow(QMainWindow, WindowMixin):
                     self.loadPascalXMLByFilename(xmlPath)
                 elif os.path.isfile(txtPath):
                     self.loadYOLOTXTByFilename(txtPath)
+                else:
+                    basename = os.path.basename(os.path.splitext(prevname)[0])
+                    xmlPath = os.path.join(self.defaultSaveDir, basename + XML_EXT)
+                    txtPath = os.path.join(self.defaultSaveDir, basename + TXT_EXT)
+                    if os.path.isfile(xmlPath):
+                        self.loadPascalXMLByFilename(xmlPath)
+                        self.setDirty()
+                    if os.path.isfile(txtPath):
+                        self.loadYOLOTXTByFilename(txtPath)
+                        self.setDirty()
             else:
                 xmlPath = os.path.splitext(filePath)[0] + XML_EXT
                 txtPath = os.path.splitext(filePath)[0] + TXT_EXT
@@ -1074,6 +1085,15 @@ class MainWindow(QMainWindow, WindowMixin):
                     self.loadPascalXMLByFilename(xmlPath)
                 elif os.path.isfile(txtPath):
                     self.loadYOLOTXTByFilename(txtPath)
+                else:
+                    xmlPath = os.path.splitext(prevname)[0] + XML_EXT
+                    txtPath = os.path.splitext(prevname)[0] + TXT_EXT
+                    if os.path.isfile(xmlPath):
+                        self.loadPascalXMLByFilename(xmlPath)
+                        self.setDirty()
+                    elif os.path.isfile(txtPath):
+                        self.loadYOLOTXTByFilename(txtPath)
+                        self.setDirty()
 
             self.setWindowTitle(__appname__ + ' ' + filePath)
 
