@@ -987,55 +987,6 @@ class MainWindow(QMainWindow, WindowMixin):
         for item, shape in self.itemsToShapes.items():
             item.setCheckState(Qt.Checked if value else Qt.Unchecked)
 
-    def loadOldFile(self, newfilePath=None, filePath=None):
-        """Load the xml file of previous canvas."""
-        # This function loads the old xml/txt canvas ONLY if a new canvas for xml/txt has not been found previously.
-        # Don't forget to save the new one, otherwise the work will be lost!
-        # Label xml file and show bound box according to its filename
-        # if self.usingPascalVocFormat is True:
-        if self.defaultSaveDir is not None:
-            basename = os.path.basename(
-                os.path.splitext(newfilePath)[0])
-            xmlPath = os.path.join(self.defaultSaveDir, basename + XML_EXT)
-            txtPath = os.path.join(self.defaultSaveDir, basename + TXT_EXT)
-
-            """Annotation file priority:
-            PascalXML > YOLO
-            """
-            if os.path.isfile(xmlPath):
-                return
-            elif os.path.isfile(txtPath):
-                return
-        else:
-            xmlPath = os.path.splitext(newfilePath)[0] + XML_EXT
-            txtPath = os.path.splitext(newfilePath)[0] + TXT_EXT
-            if os.path.isfile(xmlPath):
-                return
-            elif os.path.isfile(txtPath):
-                return
-
-        # we didn't find any xml/txt old annotations here, so lets try to load the previous one if found
-        if self.defaultSaveDir is not None:
-            basename = os.path.basename(
-                os.path.splitext(filePath)[0])
-            xmlPath = os.path.join(self.defaultSaveDir, basename + XML_EXT)
-            txtPath = os.path.join(self.defaultSaveDir, basename + TXT_EXT)
-
-            """Annotation file priority:
-            PascalXML > YOLO
-            """
-            if os.path.isfile(xmlPath):
-                self.loadPascalXMLByFilename(xmlPath)
-            elif os.path.isfile(txtPath):
-                self.loadYOLOTXTByFilename(txtPath)
-        else:
-            xmlPath = os.path.splitext(filePath)[0] + XML_EXT
-            txtPath = os.path.splitext(filePath)[0] + TXT_EXT
-            if os.path.isfile(xmlPath):
-                self.loadPascalXMLByFilename(xmlPath)
-            elif os.path.isfile(txtPath):
-                self.loadYOLOTXTByFilename(txtPath)
-
     def loadFile(self, filePath=None):
         """Load the specified file, or the last opened file if None."""
         self.resetState()
@@ -1320,14 +1271,11 @@ class MainWindow(QMainWindow, WindowMixin):
         if self.filePath is None:
             return
 
-        oldfilename = self.filePath
         currIndex = self.mImgList.index(self.filePath)
         if currIndex - 1 >= 0:
             filename = self.mImgList[currIndex - 1]
             if filename:
                 self.loadFile(filename)
-            if oldfilename:
-                self.loadOldFile(filename, oldfilename)
 
     def openNextImg(self, _value=False):
         # Proceding prev image without dialog if having any label
@@ -1345,7 +1293,6 @@ class MainWindow(QMainWindow, WindowMixin):
         if len(self.mImgList) <= 0:
             return
 
-        oldfilename = self.filePath
         filename = None
         if self.filePath is None:
             filename = self.mImgList[0]
@@ -1356,8 +1303,6 @@ class MainWindow(QMainWindow, WindowMixin):
 
         if filename:
             self.loadFile(filename)
-        if oldfilename:
-            self.loadOldFile(filename, oldfilename)
 
     def openFile(self, _value=False):
         if not self.mayContinue():
