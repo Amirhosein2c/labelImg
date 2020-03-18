@@ -11,7 +11,7 @@ It is written in Python and uses Qt for its graphical interface.
 
 Annotations are saved as XML files in PASCAL VOC format. 
 
-.. image:: demo/Demo_M.png
+.. image:: https://raw.githubusercontent.com/Amirhosein2c/labelImg/master/demo/Demo_M.png
      :alt: Demo Image
 
 
