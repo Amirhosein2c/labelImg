@@ -97,12 +97,12 @@ Get from PyPI but only python3.0 or above
 Usage
 -----
 
-0. Clone the current repository. (due to the modifications, you need to re-install the labelImage)
-1. Build and launch using the instructions above.
-2. Click 'Change Save Dir' from the left menu bar, and point to the downloaded XML files' folder.
-3. Click 'Open Dir' from the left menu to point to the folder containing downloaded images
-4. If everything goes right, you should see an image with the bounding boxes already painted on it.
-5. The goal is to correct the mislocated or misdetected bounding boxes.
+1. Clone the current repository. (due to the modifications, you need to re-install the labelImage)
+2. Build and launch using the instructions above.
+3. Click 'Change Save Dir' from the left menu bar, and point to the downloaded XML files' folder.
+4. Click 'Open Dir' from the left menu to point to the folder containing downloaded images
+5. If everything goes right, you should see an image with the bounding boxes already painted on it.
+6. The goal is to correct the mislocated or misdetected bounding boxes.
 
 - Please refer to the below hotkeys to ease and speed up your workflow.
 
