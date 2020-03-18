@@ -250,13 +250,13 @@ class MainWindow(QMainWindow, WindowMixin):
         # delete = action(getStr('delBox'), self.deleteSelectedShape,
         #                 'Delete', 'delete', getStr('delBoxDetail'), enabled=False)
         delete = action(getStr('delBox'), self.deleteSelectedShape,
-                        'Q', 'delete', getStr('delBoxDetail'), enabled=False)
+                        ['Q', 'Delete'], 'delete', getStr('delBoxDetail'), enabled=False)
 
         # copy = action(getStr('dupBox'), self.copySelectedShape,
         #               'Ctrl+D', 'copy', getStr('dupBoxDetail'),
         #               enabled=False)
         copy = action(getStr('dupBox'), self.copySelectedShape,
-                      'Ctrl+C', 'copy', getStr('dupBoxDetail'),
+                      ['Ctrl+C', 'C'], 'copy', getStr('dupBoxDetail'),
                       enabled=False)
 
         advancedMode = action(getStr('advancedMode'), self.toggleAdvancedMode,
@@ -305,7 +305,7 @@ class MainWindow(QMainWindow, WindowMixin):
         }
 
         edit = action(getStr('editLabel'), self.editLabel,
-                      'Ctrl+E', 'edit', getStr('editLabelDetail'),
+                      ['Ctrl+E', 'E'], 'edit', getStr('editLabelDetail'),
                       enabled=False)
         self.editButton.setDefaultAction(edit)
 
@@ -1285,11 +1285,11 @@ class MainWindow(QMainWindow, WindowMixin):
 
         if filename:
             self.loadFile(filename)
-            # todo: Amir
-            if self.temp_shape is None:
-                pass
-            else:
-                self.loadLabels(self.temp_shape)
+            # # todo: Amir
+            # if self.temp_shape is None:
+            #     pass
+            # else:
+            #     self.loadLabels(self.temp_shape)
 
     def openFile(self, _value=False):
         if not self.mayContinue():

@@ -83,7 +83,8 @@ def generateColorByText(text):
     r = int((hashCode / 255) % 255)
     g = int((hashCode / 65025)  % 255)
     b = int((hashCode / 16581375)  % 255)
-    return QColor(r, g, b, 100)
+    # return QColor(r, g, b, 100)
+    return QColor(r, g, b, 200)
 
 def have_qstring():
     '''p3/qt5 get rid of QString wrapper as py3 has native unicode str type'''
