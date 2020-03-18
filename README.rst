@@ -1,30 +1,11 @@
 LabelImg
 ========
 
-.. image:: https://img.shields.io/pypi/v/labelimg.svg
-        :target: https://pypi.python.org/pypi/labelimg
-
-.. image:: https://img.shields.io/travis/tzutalin/labelImg.svg
-        :target: https://travis-ci.org/tzutalin/labelImg
-
-.. image:: /resources/icons/app.png
-    :width: 200px
-    :align: center
-
 LabelImg is a graphical image annotation tool.
 
 It is written in Python and uses Qt for its graphical interface.
 
-Annotations are saved as XML files in PASCAL VOC format, the format used
-by `ImageNet <http://www.image-net.org/>`__.  Besides, it also supports YOLO format
-
-.. image:: https://raw.githubusercontent.com/Amirhosein2c/labelImg/master/demo/Demo_M.png
-     :alt: Demo Image
-
-.. image:: https://raw.githubusercontent.com/tzutalin/labelImg/master/demo/demo.jpg
-     :alt: Demo Image
-
-`Watch a demo video <https://youtu.be/p0nR2YsCY_U>`__
+Annotations are saved as XML files in PASCAL VOC format.
 
 Installation
 ------------------
@@ -49,7 +30,7 @@ Python 2 + Qt4
     sudo pip install lxml
     make qt4py2
     python labelImg.py
-    python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+    
 
 Python 3 + Qt5 (Recommended)
 
@@ -59,7 +40,7 @@ Python 3 + Qt5 (Recommended)
     sudo pip3 install -r requirements/requirements-linux-python3.txt
     make qt5py3
     python3 labelImg.py
-    python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+    
 
 macOS
 ^^^^^
@@ -71,7 +52,7 @@ Python 2 + Qt4
     brew install libxml2
     make qt4py2
     python labelImg.py
-    python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+    
 
 Python 3 + Qt5 (Recommended)
 
@@ -86,7 +67,7 @@ Python 3 + Qt5 (Recommended)
 
     make qt5py3
     python3 labelImg.py
-    python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+    
 
 
 Python 3 Virtualenv (Recommended)
@@ -120,7 +101,7 @@ Open cmd and go to the `labelImg <#labelimg>`__ directory
     For pyqt5, pyrcc5 -o libs/resources.py resources.qrc
     
     python labelImg.py
-    python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+    
 
 Windows + Anaconda
 ^^^^^^^^^^^^^^^^^^
@@ -134,7 +115,7 @@ Open the Anaconda Prompt and go to the `labelImg <#labelimg>`__ directory
     conda install pyqt=5
     pyrcc5 -o libs/resources.py resources.qrc
     python labelImg.py
-    python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+    
 
 Get from PyPI but only python3.0 or above
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,28 +123,7 @@ Get from PyPI but only python3.0 or above
 
     pip3 install labelImg
     labelImg
-    labelImg [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-
-Use Docker
-~~~~~~~~~~~~~~~~~
-.. code:: shell
-
-    docker run -it \
-    --user $(id -u) \
-    -e DISPLAY=unix$DISPLAY \
-    --workdir=$(pwd) \
-    --volume="/home/$USER:/home/$USER" \
-    --volume="/etc/group:/etc/group:ro" \
-    --volume="/etc/passwd:/etc/passwd:ro" \
-    --volume="/etc/shadow:/etc/shadow:ro" \
-    --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    tzutalin/py2qt4
-
-    make qt4py2;./labelImg.py
-
-You can pull the image which has all of the installed and required dependencies. `Watch a demo video <https://youtu.be/nw1GexJzbCI>`__
+    
 
 
 Usage
