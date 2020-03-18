@@ -1,3 +1,4 @@
+
 LabelImg
 ========
 
@@ -52,6 +53,7 @@ Python 3 + Qt5 (Recommended)
     make qt5py3
     python3 labelImg.py
 
+
 Python 3 Virtualenv (Recommended)
 
 Virtualenv can avoid a lot of the QT / Python version issues
@@ -64,6 +66,7 @@ Virtualenv can avoid a lot of the QT / Python version issues
     pipenv run make qt5py3
     python3 labelImg.py
     [Optional] rm -rf build dist; python setup.py py2app -A;mv "dist/labelImg.app" /Applications
+
 
 Note: The Last command gives you a nice .app file with a new SVG Icon in your /Applications folder. You can consider using the script: build-tools/build-for-macos.sh
 
@@ -81,7 +84,6 @@ Open cmd and go to the `labelImg <#labelimg>`__ directory
 
     pyrcc4 -o line/resources.py resources.qrc
     For pyqt5, pyrcc5 -o libs/resources.py resources.qrc
-    
     python labelImg.py
 
 
@@ -95,8 +97,6 @@ Get from PyPI but only python3.0 or above
 Usage
 -----
 
-Steps:
-~~~~~~~~~~~~~~~~~
 0. Clone the current repository. (due to the modifications, you need to re-install the labelImage)
 1. Build and launch using the instructions above.
 2. Click 'Change Save Dir' from the left menu bar, and point to the downloaded XML files' folder.
