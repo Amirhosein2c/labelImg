@@ -8,10 +8,9 @@ LabelImg is a graphical image annotation tool.
 
 It is written in Python and uses Qt for its graphical interface.
 
-Annotations are saved as XML files in PASCAL VOC format, the format used
-by `ImageNet <http://www.image-net.org/>`__. 
+Annotations are saved as XML files in PASCAL VOC format. 
 
-.. image:: https://raw.githubusercontent.com/tzutalin/labelImg/master/demo/demo3.jpg
+.. image:: https://raw.githubusercontent.com/tzutalin/labelImg/master/demo/Demo_M.png
      :alt: Demo Image
 
 
@@ -24,16 +23,6 @@ Demo Usage
 Installation
 ------------------
 
-
-Build from source
-~~~~~~~~~~~~~~~~~
-
-Linux/Ubuntu/Mac requires at least `Python
-2.6 <https://www.python.org/getit/>`__ and has been tested with `PyQt
-4.8 <https://www.riverbankcomputing.com/software/pyqt/intro>`__. However, `Python
-3 or above <https://www.python.org/getit/>`__ and  `PyQt5 <https://pypi.org/project/PyQt5/>`__ are strongly recommended.
-
-
 Ubuntu Linux
 ^^^^^^^^^^^^
 
@@ -45,8 +34,7 @@ Python 3 + Qt5 (Recommended)
     sudo pip3 install -r requirements/requirements-linux-python3.txt
     make qt5py3
     python3 labelImg.py
-    python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
+    
 macOS
 ^^^^^
 
@@ -63,8 +51,6 @@ Python 3 + Qt5 (Recommended)
 
     make qt5py3
     python3 labelImg.py
-    python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
 
 Python 3 Virtualenv (Recommended)
 
@@ -97,7 +83,6 @@ Open cmd and go to the `labelImg <#labelimg>`__ directory
     For pyqt5, pyrcc5 -o libs/resources.py resources.qrc
     
     python labelImg.py
-    python labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
 
 
 Get from PyPI but only python3.0 or above
@@ -106,75 +91,38 @@ Get from PyPI but only python3.0 or above
 
     pip3 install labelImg
     labelImg
-    labelImg [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
-
-
-Use Docker
-~~~~~~~~~~~~~~~~~
-.. code:: shell
-
-    docker run -it \
-    --user $(id -u) \
-    -e DISPLAY=unix$DISPLAY \
-    --workdir=$(pwd) \
-    --volume="/home/$USER:/home/$USER" \
-    --volume="/etc/group:/etc/group:ro" \
-    --volume="/etc/passwd:/etc/passwd:ro" \
-    --volume="/etc/shadow:/etc/shadow:ro" \
-    --volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    tzutalin/py2qt4
-
-    make qt4py2;./labelImg.py
-
-You can pull the image which has all of the installed and required dependencies. `Watch a demo video <https://youtu.be/nw1GexJzbCI>`__
-
-
+    
 Usage
 -----
 
 Steps:
 ~~~~~~~~~~~~~~~~~
-
+0. Clone the current repository. (due to the modifications, you need to re-install the labelImage)
 1. Build and launch using the instructions above.
-2. Click 'Change default saved annotation folder' in Menu/File
-3. Click 'Open Dir'
-4. Click 'Create RectBox'
-5. Click and release left mouse to select a region to annotate the rect
-   box
-6. You can use right mouse to drag the rect box to copy or move it
+2. Click 'Change Save Dir' from the left menu bar, and point to the downloaded XML files' folder.
+3. Click 'Open Dir' from the left menu to point to the folder containing downloaded images
+4. If everything goes right, you should see an image with the bounding boxes already painted on it.
+5. The goal is to correct the mislocated or misdetected bounding boxes.
 
-The annotation will be saved to the folder you specify.
-
-You can refer to the below hotkeys to speed up your workflow.
-
+- Please refer to the below hotkeys to ease and speed up your workflow.
 
 
 Hotkeys
 ~~~~~~~
 
+
 +------------+--------------------------------------------+
-| Ctrl + u   | Load all of the images from a directory    |
+| c          | Create a new bounting box                  |
 +------------+--------------------------------------------+
-| Ctrl + r   | Change the default annotation target dir   |
+| w          | Copy / Duplicate the current bounding box  |
 +------------+--------------------------------------------+
-| Ctrl + s   | Save                                       |
+| Q / Del    | Delete the selected bounding box           |
 +------------+--------------------------------------------+
-| Ctrl + d   | Copy the current label and rect box        |
+| E          | Edit / Change label of the selected box    |
 +------------+--------------------------------------------+
-| w          | Create a rect box                          |
+| d          | Forward to the Next image                  |
 +------------+--------------------------------------------+
-| d          | Next image                                 |
-+------------+--------------------------------------------+
-| a          | Previous image                             |
-+------------+--------------------------------------------+
-| del        | Delete the selected rect box               |
-+------------+--------------------------------------------+
-| Ctrl++     | Zoom in                                    |
-+------------+--------------------------------------------+
-| Ctrl--     | Zoom out                                   |
-+------------+--------------------------------------------+
-| ↑→↓←       | Keyboard arrows to move selected rect box  |
+| a          | Backward to the Previous image             |
 +------------+--------------------------------------------+
 
 
