@@ -135,15 +135,14 @@ Usage
 Steps
 ~~~~~~~~~~~~~~~~~
 
-1. Build and launch using the instructions above.
-2. Click 'Change default saved annotation folder' in Menu/File
-3. Click 'Open Dir'
-4. Click 'Create RectBox'
-5. Click and release left mouse to select a region to annotate the rect
-   box
-6. You can use right mouse to drag the rect box to copy or move it
-
-The annotation will be saved to the folder you specify.
+1. Clone and build this repo, then launch the app using the instructions above.
+2. Click 'Change Save Dir' in the left toolbar to point to the downloaded XML files.
+3. Click 'Open Dir' to point to the downloaded Image files.
+4. If everything goes right you should see an image which is already contains 
+   automatically generated bounding boxes 
+5. Use your mouse to move or resize the mislocated bounding boxes
+6. Use the Hotkeys listed below to add missing boxes or edit the mislabeled boxes, if any.
+7. Move to the next image using aforementioned Hotkeys to proceed to the next image.
 
 You can refer to the below hotkeys to speed up your workflow.
 
