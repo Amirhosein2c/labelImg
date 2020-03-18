@@ -142,9 +142,9 @@ Steps
    automatically generated bounding boxes 
 5. Use your mouse to move or resize the mislocated bounding boxes
 6. Use the Hotkeys listed below to add missing boxes or edit the mislabeled boxes, if any.
-7. Move to the next image using aforementioned Hotkeys to proceed to the next image.
+7. Move to the next image using the following Hotkeys to proceed to the next image.
 
-You can refer to the below hotkeys to speed up your workflow.
+Please refer to the following hotkeys to ease up your workflow.
 
 
 
