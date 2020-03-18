@@ -152,13 +152,13 @@ Hotkeys
 ~~~~~~~
 
 +------------+--------------------------------------------+
-| e          | Change the label of a bounding box         |
+| e          | Change label of a selected bounding box    |
 +------------+--------------------------------------------+
 | c          | Copy / duplicate the current bounding box  |
 +------------+--------------------------------------------+
-| w          | Create a rect box                          |
+| w          | Create a new bounding box                  |
 +------------+--------------------------------------------+
-| del        | Delete the selected rect box               |
+| q / del    | Delete the selected bounding box           |
 +------------+--------------------------------------------+
 | d          | Next image                                 |
 +------------+--------------------------------------------+
