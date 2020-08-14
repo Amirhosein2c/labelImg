@@ -1,6 +1,10 @@
 LabelImg
 ========
 
+This is a custom version of LabelImg, the awesome labeling tool, modified for an internal project.
+The aim was to make the labeling process semi-automatic, using a pre-trained RefineDet object detector.
+
+
 LabelImg is a graphical image annotation tool.
 
 It is written in Python and uses Qt for its graphical interface.
